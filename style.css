@@ -1,0 +1,569 @@
+/* Reset default styles */
+body,
+h1,
+h2,
+p,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+/* Styles for header and navigation menu */
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu a {
+  color: #ffffff;
+  padding: 10px;
+}
+
+/* Styles for menu and food categories */
+.menu-section {
+  padding: 40px;
+}
+
+.menu-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Styles for about section */
+.about-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Styles for contact section */
+.contact-section {
+  padding: 40px;
+}
+
+.contact-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Styles for footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Styles for contact form */
+.contact-section {
+  padding: 40px;
+}
+
+.contact-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Add a flexbox layout to center the button */
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: #FFD700;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #FFC500;
+}
+
+/* Styles for about section */
+.about-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.customer-praises {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.praise {
+  flex: 0 0 48%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.praise blockquote {
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.praise cite {
+  display: block;
+  text-align: right;
+  font-style: italic;
+  color: #666;
+}
+
+/* Styles for menu section */
+.menu-section {
+  padding: 40px;
+}
+
+.menu-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.menu-categories {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.category-button {
+  background-color: #FFD700;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+.category-button:hover {
+  background-color: #FFC500;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.food-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.food-item img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.food-item h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.food-item p {
+  font-size: 14px;
+}
+
+.add-to-cart {
+  background-color: #00C853;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #00B347;
+}
+
+/* Main container styles */
+.main-container {
+  position: relative;
+  /* Important for stacking context */
+  padding: 40px;
+}
+
+/* Login Modal Styles */
+.login-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  /* Opacity effect */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* Make sure the modal appears above other content */
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.login-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label {
+  margin-bottom: 5px;
+}
+
+.login-container input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button {
+  padding: 10px 20px;
+  background-color: #FFC500;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.login-container button:hover {
+  background-color: #FFC500;
+}
+
+.login-container p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.login-container a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  /* Opacity effect */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* Make sure the modal appears above other content */
+}
+
+.modal-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.modal-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.modal-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-container label {
+  margin-bottom: 5px;
+}
+
+.modal-container input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-container button {
+  padding: 10px 20px;
+  background-color: #FFC500;
+  ;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal-container button:hover {
+  background-color: #FFC500;
+  ;
+}
+
+.modal-container p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.modal-container a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.modal-container a:hover {
+  text-decoration: underline;
+}
+
+/* Cyclic Image Slider */
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+}
+
+.food-slider {
+  display: flex;
+  overflow: hidden;
+  animation: rotateSlider 20s linear infinite;
+}
+
+.food-image {
+  width: 350px;
+  height: auto;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+@keyframes rotateSlider {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+
+/* Styles for .cta button */
+.cta {
+  display: block;
+  background-color: #FFC500;
+  color: #333;
+  padding: 15px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+  max-width: 250px; /* Optional: You can set a max-width to limit the button's width */
+}
+
+.cta:hover {
+  background-color: #FFC500;
+}
+
+/* Responsive styles for different screen sizes */
+/* Small devices (phones, 576px and up) */
+@media screen and (max-width: 576px) {
+  .cta {
+    max-width: 100%; /* Make the button take full width on smaller screens */
+  }
+}
+
+
+/* Responsive styles for different screen sizes */
+/* Small devices (phones, 576px and up) */
+@media screen and (min-width: 576px) {
+
+  /* Adjust padding for main container */
+  .main-container {
+    padding: 20px;
+  }
+
+  /* Reduce font sizes for smaller screens */
+  .menu-section h2,
+  .about-section h2,
+  .contact-section h2 {
+    font-size: 24px;
+  }
+
+  /* Make menu items in two columns */
+  .menu-items {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  /* Adjust width of food images */
+  .food-item img {
+    width: 100%;
+    max-height: 150px;
+  }
+
+  /* Adjust font size for .cta button */
+  .cta {
+    font-size: 14px;
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (min-width: 576px) {
+
+  /* Adjust padding for main container */
+  .main-container {
+    padding: 20px;
+  }
+
+  /* Reduce font sizes for smaller screens */
+  .menu-section h2,
+  .about-section h2,
+  .contact-section h2 {
+    font-size: 24px;
+  }
+
+  /* Make menu items in two columns */
+  .menu-items {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  /* Adjust width of food images */
+  .food-item img {
+    width: 100%;
+    max-height: 150px;
+  }
+
+  /* Adjust font size for .cta button */
+  .cta {
+    font-size: 14px;
+    margin-left: 0;
+  }
+}
+
+/* Extra-small devices (phones, 320px and up) */
+@media screen and (max-width: 576px) {
+  /* Adjust padding for main container */
+  .main-container {
+    padding: 10px;
+  }
+
+  /* Reduce font sizes for smaller screens */
+  .menu-section h2,
+  .about-section h2,
+  .contact-section h2 {
+    font-size: 20px;
+  }
+
+  /* Adjust width of food images */
+  .food-item img {
+    max-height: 120px;
+  }
+
+  /* Changing layout for cyclic image slider */
+  .food-slider {
+    animation: rotateSlider 15s linear infinite;
+  }
+
+  /* Make menu items in a single column */
+  .menu-items {
+    grid-template-columns: 1fr;
+  }
+}

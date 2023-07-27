@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">Spmhot's Restaurant</div>
+        <nav class="menu">
+            <a href="#home">Home</a>
+            <a href="#menu1">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#cartModel" onclick="showCart()">Cart</a>
+            <a href="#loginModel" onclick="showLogin()">Login</a>
+        </nav>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="food-slider">
+            <img src="images/image1.jpg" alt="Food Image 1" class="food-image">
+            <img src="images/image2.jpg" alt="Food Image 2" class="food-image">
+            <img src="images/image3.jpg" alt="Food Image 3" class="food-image">
+            <img src="images/image2.jpg" alt="Food Image 2" class="food-image">
+            <!-- Add more image tags as needed -->
+        </div>
+        <br>
+        <br>
+        <div class="content">
+            <a href="#menu1" class="cta" style="margin: auto;">Order Now</a>
+        </div>
+    </section>
+
+    <section id="menu1" class="menu-section">
+        <h2>Our Menu</h2>
+        <div class="menu-categories">
+            <button class="category-button" data-category="appetizers">Appetizers</button>
+            <button class="category-button" data-category="main-dishes">Main Dishes</button>
+            <button class="category-button" data-category="desserts">Desserts</button>
+            <button class="category-button" data-category="pizza">Pizza</button>
+            <button class="category-button" data-category="chinese">Chinese</button>
+        </div>
+        <div class="menu-items">
+            <!-- Food items go here -->
+            <div class="food-item appetizers">
+                <img src="path_to_appetizer_image.jpg" alt="Appetizer">
+                <h3>Appetizer Name</h3>
+                <p>Description of the appetizer.</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more food items for appetizers category -->
+
+            <div class="food-item main-dishes">
+                <img src="path_to_main_dish_image.jpg" alt="Main Dish">
+                <h3>Main Dish Name</h3>
+                <p>Description of the main dish.</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more food items for main dishes category -->
+
+            <div class="food-item desserts">
+                <img src="path_to_dessert_image.jpg" alt="Dessert">
+                <h3>Dessert Name</h3>
+                <p>Description of the dessert.</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more food items for desserts category -->
+
+            <div class="food-item pizza">
+                <img src="images/pizza/pizza1.jpg" alt="Pizza">
+                <h3>Pizza1</h3>
+                <p>Description of the pizza.</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="food-item pizza">
+                <img src="images/pizza/pizza2.jpg" alt="Pizza">
+                <h3>Pizza2</h3>
+                <p>Description of the pizza.</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more food items for pizza category -->
+
+            <div class="food-item chinese">
+                <img src="path_to_chinese_dish_image.jpg" alt="Chinese Dish">
+                <h3>Chinese Dish Name</h3>
+                <p>Description of the Chinese dish.</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more food items for Chinese category -->
+        </div>
+    </section>
+
+
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-container">
+            <h2>Your Cart</h2>
+            <div class="cart-items">
+                <!-- Cart items go here -->
+            </div>
+            <br>
+            <button class="close-cart" onclick="hideCart()">Close</button>
+            <div class="button-container">
+                <button class="order-now" onclick="goToPayment()">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-container">
+            <h2>Payment</h2>
+            <div class="payment-methods">
+                <label for="payment-method">Select Payment Method:</label>
+                <select id="payment-method">
+                    <option value="credit-card">Credit Card</option>
+                    <option value="debit-card">Debit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <!-- Add more payment options as needed -->
+                </select>
+            </div>
+            <div class="address-input">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="mobile-number-input">
+                <label for="mobile-number">Mobile Number:</label>
+                <input type="tel" id="mobile-number" name="mobile-number" required>
+            </div>
+            <div class="button-container">
+                <button class="payment-button" onclick="submitPayment()">Submit Payment</button>
+                <button class="close-payment" onclick="hidePayment()">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="login-modal">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" style="background-color: #FFC500;">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="showRegisterForm()">Register here</a></p>
+            <p><a href="#" onclick="showForgotPasswordForm()">Forgot your password?</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-container">
+            <h2>Register</h2>
+            <!-- Register form content goes here -->
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+        </div>
+    </div>
+
+    <!-- The Forgot Password modal -->
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-container">
+            <h2>Forgot Password</h2>
+            <form>
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit">Submit</button>
+            </form>
+            <p><a href="#" onclick="showLogin()">Back to Login</a></p>
+        </div>
+    </div>
+
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>Welcome to Spmhot's Restaurant, where we serve the most delicious food to satisfy your cravings. We take
+            pride in
+            offering a wide variety of cuisines to suit every palate. Whether you're in the mood for savory Italian
+            pasta, flavorful Indian curries, or mouthwatering American burgers, we've got you covered!</p>
+
+        <p>Our journey began with a passion for culinary excellence and a desire to create an inviting space for people
+            to enjoy exceptional meals. Over the years, we have garnered immense love and support from our beloved
+            customers, which motivates us to continually push the boundaries of taste and quality.</p>
+
+        <p>But don't just take our word for it; here's what some of our valued customers have to say:</p>
+
+        <div class="customer-praises">
+            <div class="praise">
+                <blockquote>"The food here is absolutely incredible! Every dish is bursting with flavors. My family and
+                    I always have a fantastic dining experience at Restaurant Name. Highly recommended!"</blockquote>
+                <cite>- John Doe</cite>
+            </div>
+
+            <div class="praise">
+                <blockquote>"I can't get enough of their mouthwatering desserts! The staff is friendly, the ambiance is
+                    cozy, and the food is outstanding. A must-visit for any food lover!"</blockquote>
+                <cite>- John Doe</cite>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <div class="button-container">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Contact form goes here -->
+    </section>
+    <div class="footer">
+        <p>&copy; 2023 Spmhot's Restaurant. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $(".category-button").click(function () {
+                const category = $(this).data("category");
+                $(".food-item").hide();
+                $(`.food-item.${category}`).show();
+            });
+            $(".food-item").hide();
+
+            // Handle 'Add to Cart' button clicks
+            $(".add-to-cart").click(function () {
+                const foodName = $(this).siblings("h3").text();
+                addToCart(foodName);
+                showCart(); // Show the cart modal when an item is added to the cart
+            });
+        });
+
+        // Function to get the cart items from localStorage
+        function getCartItems() {
+            return JSON.parse(localStorage.getItem("cartItems")) || [];
+        }
+
+        // Function to save the cart items to localStorage
+        function saveCartItems(cartItems) {
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        }
+
+        // Function to update the cart items in the DOM
+        function updateCart() {
+            const cartItems = getCartItems();
+            const cartItemsContainer = $(".cart-items");
+            cartItemsContainer.empty();
+
+            for (const cartItem of cartItems) {
+                const cartItemDiv = $(`
+                <div class="cart-item" data-name="${cartItem.foodName}" data-quantity="${cartItem.quantity}">
+                    <h3>${cartItem.foodName}</h3>
+                    <p class="quantity">Quantity: ${cartItem.quantity}</p>
+                    <button class="increase-quantity" onclick="increaseQuantity('${cartItem.foodName}')">+</button>
+                    <button class="decrease-quantity" onclick="decreaseQuantity('${cartItem.foodName}')">-</button>
+                    <button class="remove-item" onclick="removeItem('${cartItem.foodName}')">Remove</button>
+                </div>
+            `);
+                cartItemsContainer.append(cartItemDiv);
+            }
+        }
+
+        // Function to add items to the cart
+        function addToCart(foodName) {
+            const cartItems = getCartItems();
+            const existingItem = cartItems.find((item) => item.foodName === foodName);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cartItems.push({ foodName, quantity: 1 });
+            }
+
+            saveCartItems(cartItems);
+            updateCart();
+        }
+
+        // Function to remove an item from the cart
+        function removeItem(foodName) {
+            const cartItems = getCartItems();
+            const updatedCartItems = cartItems.filter((item) => item.foodName !== foodName);
+
+            saveCartItems(updatedCartItems);
+            updateCart();
+        }
+
+        // Function to increase the quantity of an item in the cart
+        function increaseQuantity(foodName) {
+            const cartItems = getCartItems();
+            const itemToUpdate = cartItems.find((item) => item.foodName === foodName);
+
+            if (itemToUpdate) {
+                itemToUpdate.quantity++;
+                saveCartItems(cartItems);
+                updateCart();
+            }
+        }
+
+        // Function to decrease the quantity of an item in the cart
+        function decreaseQuantity(foodName) {
+            const cartItems = getCartItems();
+            const itemToUpdate = cartItems.find((item) => item.foodName === foodName);
+
+            if (itemToUpdate) {
+                itemToUpdate.quantity--;
+                if (itemToUpdate.quantity <= 0) {
+                    removeItem(foodName);
+                } else {
+                    saveCartItems(cartItems);
+                    updateCart();
+                }
+            }
+        }
+
+        // Show the cart modal when clicking on the "Cart" link in the header
+        $(".menu a[href='#cart']").click(function (event) {
+            event.preventDefault();
+            showCart();
+        });
+
+        // Function to show the cart modal
+        function showCart() {
+            updateCart();
+            $("#cartModal").show();
+        }
+
+        // Function to hide the cart modal
+        function hideCart() {
+            $("#cartModal").hide();
+        }
+
+
+        // Show the payment modal when clicking on the "Order Now" button in the cart
+        function showPayment() {
+            $("#paymentModal").show();
+        }
+
+        // Function to hide the payment modal
+        function hidePayment() {
+            $("#paymentModal").hide();
+        }
+
+        // Function to submit the payment and proceed to the order completion page
+        function submitPayment() {
+            // Process the payment here (you can add your payment processing logic)
+
+            // Redirect to the order completion page
+            window.location.href = "order_completion.html";
+        }
+
+        // Handle 'Order Now' button click
+        $(".order-now").click(function () {
+            showPayment();
+        });
+
+
+        // Handle 'Order Now' button click
+        $(".order-now").click(function () {
+            goToPayment();
+        });
+
+        // Initialize the cart
+        updateCart();
+
+    </script>
+
+</body>
+
+</html>
